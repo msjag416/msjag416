@@ -1,0 +1,3 @@
+
+User-agent: *
+Disallow: /JoAnne_Gomez_Resume.pdf
