@@ -3,13 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JoAnne A. Gomez - Resume</title>
+  <title>JoAnne A. Gomez – ICU Nurse, Writer, Author</title>
+
+  <!-- Meta Tags for SEO -->
+  <meta name="description" content="ICU Nurse, medical writer, and author of Burnout to Balance. View my resume and learn more about my writing and advocacy.">
+  <meta property="og:title" content="JoAnne A. Gomez – Author of Burnout to Balance">
+  <meta property="og:description" content="ICU nurse, writer, and healthcare advocate. View my resume or check out my latest book.">
+  <meta property="og:image" content="https://yourdomain.com/cover.jpg"> <!-- Optional -->
+  <meta property="og:type" content="website">
+  <meta name="author" content="JoAnne A. Gomez">
+
   <style>
     body {
       font-family: "Segoe UI", Roboto, Helvetica, sans-serif;
       background-color: #f5f7fa;
       margin: 0;
-      padding: 40px;
+      padding: 40px 20px;
       color: #333;
       display: flex;
       flex-direction: column;
@@ -19,82 +28,95 @@
     h1 {
       font-size: 2.5em;
       margin-bottom: 0.2em;
+      text-align: center;
     }
 
     p {
       font-size: 1.2em;
       margin-bottom: 2em;
+      text-align: center;
     }
 
     iframe {
-      width: 90%;
-      height: 800px;
       border: 1px solid #ccc;
-      margin-bottom: 20px;
-    }
-
-    a {
-      text-decoration: none;
-      color: white;
-      background-color: #007acc;
-      padding: 12px 24px;
-      border-radius: 6px;
-      font-size: 1em;
-      transition: background-color 0.2s ease;
-    }
-
-    a:hover {
-      background-color: #005fa3;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
     }
 
     footer {
-      margin-top: 40px;
       font-size: 0.9em;
       color: #777;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        height: 95vh;
+      }
     }
   </style>
 </head>
 <body>
 
   <h1>JoAnne A. Gomez</h1>
-  <p>ICU Nurse | Medical Writer | Ghostwriter for Executives</p>
+  <p>ICU Nurse | Medical Writer | Author of <em>Burnout to Balance</em></p>
 
-  <!-- Embedded PDF -->
-  <!-- Resume for desktop -->
-<div id="resume-desktop" style="display: block; width: 100%; text-align: center; padding: 20px;">
-  <iframe 
-    src="JoAnne_Gomez_Resume.pdf"
-    title="Resume"
-    style="width: 80vw; max-width: 1100px; height: 95vh; border: 1px solid #ccc; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
-  </iframe></div>
+  <!-- Desktop version -->
+  <div id="resume-desktop" style="display: block; width: 100%; text-align: center; padding: 20px;">
+    <iframe 
+      src="JoAnne_Gomez_Resume.pdf" 
+      title="Resume"
+      style="width: 80vw; max-width: 1100px; height: 95vh;">
+    </iframe>
+  </div>
 
-<!-- Resume link for mobile -->
-<div id="resume-mobile" style="display: none; text-align: center; margin-top: 20px;">
-  <a 
-    href="JoAnne_Gomez_Resume.pdf" 
-    target="_blank" 
-    style="background-color: #007acc; color: white; padding: 14px 24px; border-radius: 6px; text-decoration: none; font-size: 1em;">
-    Tap to View My Resume (PDF)
-  </a>
-</div>
-
-<script>
-  // Simple mobile detection
-  if (window.innerWidth <= 768) {
-    document.getElementById('resume-desktop').style.display = 'none';
-    document.getElementById('resume-mobile').style.display = 'block';
-  }
-</script>
-
-</div>
-
-
-  <!-- Download button -->
-  <a href="JoAnne_Gomez_Resume.pdf" target="_blank" download>Download Resume (PDF)</a>
+  <!-- Mobile version -->
+  <div id="resume-mobile" style="display: none; text-align: center; margin-top: 20px;">
+    <iframe 
+      src="JoAnne_Gomez_Resume.pdf" 
+      title="Resume"
+      style="width: 100%; height: 95vh;">
+    </iframe>
+  </div>
 
   <footer>
     <p>© 2025 JoAnne A. Gomez</p>
   </footer>
+
+  <!-- JS: Device detection -->
+  <script>
+    if (window.innerWidth <= 768) {
+      document.getElementById('resume-desktop').style.display = 'none';
+      document.getElementById('resume-mobile').style.display = 'block';
+    }
+  </script>
+
+  <!-- Book Promo Bar -->
+  <script>
+    const promoBar = document.createElement('div');
+    promoBar.style.position = 'fixed';
+    promoBar.style.bottom = '20px';
+    promoBar.style.left = '20px';
+    promoBar.style.right = '20px';
+    promoBar.style.backgroundColor = '#007acc';
+    promoBar.style.color = 'white';
+    promoBar.style.padding = '14px 20px';
+    promoBar.style.fontSize = '16px';
+    promoBar.style.textAlign = 'center';
+    promoBar.style.borderRadius = '8px';
+    promoBar.style.boxShadow = '0 4px 10px rgba(0,0,0,0.1)';
+    promoBar.style.zIndex = '9999';
+    promoBar.style.fontFamily = 'Segoe UI, sans-serif';
+
+    promoBar.innerHTML = `
+      📘 <strong>Burnout to Balance: Your 8-Step Guide to Thriving in a Messy Workplace</strong><br>
+      <a href="https://www.amazon.com/dp/B0F1L3KFLY" target="_blank" style="color: white; text-decoration: underline; font-weight: bold; display: inline-block; margin-top: 8px;">
+        Buy it on Amazon
+      </a>
+    `;
+
+    document.body.appendChild(promoBar);
+  </script>
 
 </body>
 </html>
