@@ -60,12 +60,33 @@
   <p>ICU Nurse | Medical Writer | Ghostwriter for Executives</p>
 
   <!-- Embedded PDF -->
-  <div style="padding: 0 10px;">
+  <!-- Resume for desktop -->
+<div id="resume-desktop" style="padding: 0 10px; display: block;">
   <iframe 
     src="JoAnne_Gomez_Resume.pdf" 
     title="Resume"
     style="width: 100%; max-width: 100%; height: 90vh; border: 1px solid #ccc;">
   </iframe>
+</div>
+
+<!-- Resume link for mobile -->
+<div id="resume-mobile" style="display: none; text-align: center; margin-top: 20px;">
+  <a 
+    href="JoAnne_Gomez_Resume.pdf" 
+    target="_blank" 
+    style="background-color: #007acc; color: white; padding: 14px 24px; border-radius: 6px; text-decoration: none; font-size: 1em;">
+    Tap to View My Resume (PDF)
+  </a>
+</div>
+
+<script>
+  // Simple mobile detection
+  if (window.innerWidth <= 768) {
+    document.getElementById('resume-desktop').style.display = 'none';
+    document.getElementById('resume-mobile').style.display = 'block';
+  }
+</script>
+
 </div>
 
 
