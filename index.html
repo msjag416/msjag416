@@ -1,12 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JoAnne A. Gomez - Resume</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Roboto, Helvetica, sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 40px;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.2em;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 2em;
+    }
+
+    iframe {
+      width: 90%;
+      height: 800px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      background-color: #007acc;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 1em;
+      transition: background-color 0.2s ease;
+    }
+
+    a:hover {
+      background-color: #005fa3;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
+
   <h1>JoAnne A. Gomez</h1>
-  <p>I'm hosted with GitHub Pages.</p>
-  <a href="JoAnne_Gomez_Resume.pdf" target="_blank">View My Resume (PDF)</a>
+  <p>ICU Nurse | Medical Writer | Ghostwriter for Executives</p>
+
+  <!-- Embedded PDF -->
+  <iframe src="JoAnne_Gomez_Resume.pdf" title="Resume"></iframe>
+
+  <!-- Download button -->
+  <a href="JoAnne_Gomez_Resume.pdf" target="_blank" download>Download Resume (PDF)</a>
+
+  <footer>
+    <p>© 2025 JoAnne A. Gomez</p>
+  </footer>
+
 </body>
 </html>
