@@ -1,131 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JoAnne A. Gomez – ICU Nurse, Writer, Author</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JoAnne Andrea Gomez, RN - Telepractice & Medical Case Management</title>
+    <meta name="description" content="Professional portfolio for JoAnne Andrea Gomez, RN. Specializing in Provincial Teletriage (811), Virtual Care, Patient Support Programs, and Insurance Repatriation Assessments.">
+    <meta name="keywords" content="Teletriage, Telepractice Nurse, Registered Nurse Virtual Care, 811 Nurse, Nurse Case Manager, Patient Support Program, Reimbursement Specialist, Medical Case Manager, Disability Case Manager, Claims Adjudicator, Global Excel, Telus Health, Bayshore, Health811, Trauma Consultant, Fitness to Fly">
+    <meta name="author" content="JoAnne Andrea Gomez">
 
-  <!-- Meta Tags for SEO -->
-  <meta name="description" content="ICU Nurse, medical writer, and author of Burnout to Balance. View my resume and learn more about my writing and advocacy.">
-  <meta property="og:title" content="JoAnne A. Gomez – Author of Burnout to Balance">
-  <meta property="og:description" content="ICU nurse, writer, and healthcare advocate. View my resume or check out my latest book.">
-  <meta property="og:image" content="https://yourdomain.com/cover.jpg"> <!-- Optional -->
-  <meta property="og:type" content="website">
-  <meta name="author" content="JoAnne A. Gomez">
+    <!-- Fonts: Montserrat (Headings) and Lato (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <style>
-    body {
-      font-family: "Segoe UI", Roboto, Helvetica, sans-serif;
-      background-color: #f5f7fa;
-      margin: 0;
-      padding: 40px 20px;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        corporateNavy: '#1a365d', // Deep Navy
+                        corporateSlate: '#64748b', // Slate Grey
+                        corporateLight: '#f8fafc', // Off White
+                        corporateBlue: '#2563eb', // Action Blue
+                    },
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.2em;
-      text-align: center;
-    }
+    <style>
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom Button Hover Transition */
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
 
-    p {
-      font-size: 1.2em;
-      margin-bottom: 2em;
-      text-align: center;
-    }
-
-    iframe {
-      border: 1px solid #ccc;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-    }
-
-    footer {
-      font-size: 0.9em;
-      color: #777;
-      text-align: center;
-      margin-top: 60px;
-    }
-
-    @media (max-width: 768px) {
-      iframe {
-        height: 95vh;
-      }
-    }
-  </style>
+        /* Form styling fix for iOS */
+        input, textarea {
+            -webkit-appearance: none;
+        }
+    </style>
 </head>
-<body>
+<body class="font-sans text-slate-800 bg-white antialiased">
 
-  <h1>JoAnne A. Gomez</h1>
-  <p>ICU Nurse | Medical Writer | Author of <em>Burnout to Balance</em></p>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-heading font-bold text-xl text-corporateNavy tracking-tight">JAG <span class="text-corporateSlate font-light">- RN</span></span>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:space-x-8 md:items-center">
+                    <a href="#about" class="text-gray-600 hover:text-corporateNavy px-3 py-2 text-sm font-medium transition-colors">Profile</a>
+                    <a href="#competencies" class="text-gray-600 hover:text-corporateNavy px-3 py-2 text-sm font-medium transition-colors">Expertise</a>
+                    <a href="#experience" class="text-gray-600 hover:text-corporateNavy px-3 py-2 text-sm font-medium transition-colors">History</a>
+                    <a href="#contact" class="bg-corporateNavy text-white px-5 py-2 rounded-sm text-sm font-bold hover:bg-slate-800 transition-colors">Request CV</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
 
-  <!-- Desktop version -->
-  <div id="resume-desktop" style="display: block; width: 100%; text-align: center; padding: 20px;">
-    <iframe 
-      src="JoAnne_Gomez_Resume.pdf" 
-      title="Resume"
-      style="width: 80vw; max-width: 1100px; height: 95vh;">
-    </iframe>
-  </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-white border-t" id="mobile-menu">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#about" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-corporateNavy hover:text-corporateNavy">Profile</a>
+                <a href="#competencies" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-corporateNavy hover:text-corporateNavy">Expertise</a>
+                <a href="#experience" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-corporateNavy hover:text-corporateNavy">History</a>
+                <a href="#contact" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-corporateNavy font-bold">Request CV</a>
+            </div>
+        </div>
+    </nav>
 
- <!-- Resume link for mobile -->
-<div id="resume-mobile" style="display: none; text-align: center; margin-top: 20px;">
-  <a 
-    href="JoAnne_Gomez_Resume.pdf" 
-    target="_blank" 
-    style="background-color: #007acc; color: white; padding: 14px 24px; border-radius: 6px; text-decoration: none; font-size: 1em;">
-    Tap to View My Resume (PDF)
-  </a>
-</div>
+    <!-- Hero Section -->
+    <section class="relative bg-corporateNavy pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Abstract geometric background decoration -->
+        <div class="absolute inset-0 opacity-10">
+             <svg class="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                 <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white" />
+             </svg>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl tracking-tight font-heading font-bold text-white sm:text-5xl md:text-6xl mb-6">
+                JoAnne Andrea Gomez, RN
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-blue-100 font-light tracking-wide">
+                Telepractice Specialist | Medical Case Management | Claims Adjudication
+            </p>
+            <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-300">
+                Leveraging 25+ years of high-acuity Trauma & Neuro expertise for precise remote assessments, fitness-to-fly decisions, and patient support.
+            </p>
+            <div class="mt-10 mb-10">
+                <a href="#contact" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-sm text-corporateNavy bg-white hover:bg-blue-50 md:py-4 md:text-lg md:px-10 btn-hover">
+                    Contact to Request Resume
+                </a>
+            </div>
+            
+            <!-- Hero Image Added Here -->
+            <div class="flex justify-center">
+                <img src="hero.jpg" alt="JoAnne Andrea Gomez" class="rounded-full shadow-2xl border-4 border-white/20 w-64 md:w-80 aspect-square object-cover">
+            </div>
+        </div>
+    </section>
 
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Removed grid and image placeholder, now full width text for clarity -->
+            <div>
+                <h2 class="text-3xl font-heading font-bold text-slate-900 mb-6 border-l-4 border-corporateNavy pl-4">
+                    Professional Profile
+                </h2>
+                <div class="prose prose-lg text-gray-600 leading-relaxed">
+                    <p class="mb-4">
+                        I am a Canadian Registered Nurse transitioning 27+ years of clinical intensity into corporate efficiency. My extensive background in Trauma-Neuro ICU has honed a specific skill set: the ability to assess complex symptoms rapidly and accurately—whether at the bedside or over a fiber-optic line.
+                    </p>
+                    <p class="mb-4">
+                        I specialize in high-stakes decision-making. From interpreting subtle neurological changes during teletriage to determining if a complex trauma patient abroad is stable enough for medical repatriation, I apply clinical rigor to minimize risk.
+                    </p>
+                    <p>
+                            I hold degrees in Psychology and English alongside my nursing credentials, bridging the gap between clinical data and stakeholder communication.
+                    </p>
+                </div>
+                
+                <!-- Credential Badges -->
+                <div class="mt-8 flex flex-wrap gap-3">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-slate-100 text-slate-800">
+                        <i class="fa-solid fa-user-nurse mr-2"></i> RN (CNO Active)
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-slate-100 text-slate-800">
+                        <i class="fa-solid fa-brain mr-2"></i> Trauma & Neuro Exp.
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-slate-100 text-slate-800">
+                        <i class="fa-solid fa-headset mr-2"></i> Teletriage Ready
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <p>© 2025 JoAnne A. Gomez</p>
-  </footer>
+    <!-- Core Competencies -->
+    <section id="competencies" class="py-16 bg-corporateLight">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-heading font-bold text-slate-900">Transferable Clinical Expertise</h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">Applying high-acuity judgment to the Canadian remote healthcare market.</p>
+            </div>
 
-  <!-- JS: Device detection -->
-  <script>
-    if (window.innerWidth <= 768) {
-      document.getElementById('resume-desktop').style.display = 'none';
-      document.getElementById('resume-mobile').style.display = 'block';
-    }
-  </script>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Card 1: Provincial Telehealth -->
+                <div class="bg-white p-8 rounded-sm shadow-sm border-t-4 border-corporateNavy hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0 bg-blue-50 p-3 rounded-full">
+                            <i class="fa-solid fa-phone-volume text-2xl text-corporateNavy"></i>
+                        </div>
+                        <h3 class="ml-4 text-xl font-bold text-slate-900">Provincial Telehealth & Triage</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        <strong>Targeting roles with Health811 and HealthLink BC.</strong> My 12+ years in Trauma/Neuro ICU have conditioned me to identify deterioration instantly. This specific high-acuity experience is directly transferable to teletriage, enabling accurate symptom interpretation and decisive action for patient safety.
+                    </p>
+                </div>
 
-  <!-- Book Promo Bar -->
-  <script>
-    const promoBar = document.createElement('div');
-    promoBar.style.position = 'fixed';
-    promoBar.style.bottom = '20px';
-    promoBar.style.left = '20px';
-    promoBar.style.right = '20px';
-    promoBar.style.backgroundColor = '#007acc';
-    promoBar.style.color = 'white';
-    promoBar.style.padding = '14px 20px';
-    promoBar.style.fontSize = '16px';
-    promoBar.style.textAlign = 'center';
-    promoBar.style.borderRadius = '8px';
-    promoBar.style.boxShadow = '0 4px 10px rgba(0,0,0,0.1)';
-    promoBar.style.zIndex = '9999';
-    promoBar.style.fontFamily = 'Segoe UI, sans-serif';
+                <!-- Card 2: Virtual Care Platforms -->
+                <div class="bg-white p-8 rounded-sm shadow-sm border-t-4 border-corporateNavy hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0 bg-blue-50 p-3 rounded-full">
+                            <i class="fa-solid fa-video text-2xl text-corporateNavy"></i>
+                        </div>
+                        <h3 class="ml-4 text-xl font-bold text-slate-900">Virtual Care (Telemedicine)</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        <strong>Ready to facilitate intake for platforms like Telus Health.</strong> I possess the technological adaptability and communication precision required for virtual environments. I am prepared to handle intake and follow-up, ensuring physician-led visits are efficient and patients receive clear, actionable education remotely.
+                    </p>
+                </div>
 
-    promoBar.innerHTML = `
-      📘 <strong>Burnout to Balance: Your 8-Step Guide to Thriving in a Messy Workplace</strong><br>
-      <a href="https://www.amazon.com/dp/B0F1L3KFLY" target="_blank" style="color: white; text-decoration: underline; font-weight: bold; display: inline-block; margin-top: 8px;">
-        Buy it on Amazon
-      </a>
-    `;
+                <!-- Card 3: PSPs -->
+                <div class="bg-white p-8 rounded-sm shadow-sm border-t-4 border-corporateNavy hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0 bg-blue-50 p-3 rounded-full">
+                            <i class="fa-solid fa-hand-holding-medical text-2xl text-corporateNavy"></i>
+                        </div>
+                        <h3 class="ml-4 text-xl font-bold text-slate-900">Patient Support Programs (PSPs)</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        <strong>Equipped for complex portfolio management.</strong> My background involves managing multi-system comorbidities and intricate care plans. This expertise aligns perfectly with Patient Support Programs, where I can leverage clinical knowledge to guide patients through complex drug therapies and disease management.
+                    </p>
+                </div>
 
-    document.body.appendChild(promoBar);
-  </script>
-<script>
-  if (window.innerWidth <= 768) {
-    document.getElementById('resume-desktop').style.display = 'none';
-    document.getElementById('resume-mobile').style.display = 'block';
-  }
-</script>
+                <!-- Card 4: Insurance & Repatriation -->
+                <div class="bg-white p-8 rounded-sm shadow-sm border-t-4 border-corporateNavy hover:shadow-md transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0 bg-blue-50 p-3 rounded-full">
+                            <i class="fa-solid fa-plane-departure text-2xl text-corporateNavy"></i>
+                        </div>
+                        <h3 class="ml-4 text-xl font-bold text-slate-900">Insurance & Repatriation</h3>
+                    </div>
+                    <p class="text-gray-600">
+                        <strong>Qualified for risk assessment and adjudication.</strong> Critical care is risk management. I am uniquely qualified to assess medical stability and "fitness to fly" for insurers. I offer the clinical judgment necessary to make safe, cost-effective adjudication decisions for complex medical claims.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-heading font-bold text-slate-900 mb-10 border-l-4 border-corporateNavy pl-4">
+                Professional History
+            </h2>
+
+            <div class="relative border-l-2 border-gray-200 ml-4 space-y-12">
+                
+                <!-- Role 1 -->
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-corporateNavy"></div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Clinical Case Review & Recovery Specialist</h3>
+                        <div class="text-corporateSlate font-medium mb-2">Toronto Cosmetic Surgery Clinic | 2012 – Present</div>
+                        <ul class="list-disc list-outside ml-4 text-gray-600 space-y-2 mt-3">
+                            <li><strong>Relevance to Virtual Care:</strong> Evaluated post-operative risks remotely to manage complications and minimize facility liability.</li>
+                            <li>Coordinated patient education and follow-up care, mimicking the workflow of modern Patient Support Programs.</li>
+                            <li>Acted as a liaison between surgeons and patients, aligning clinical outcomes with recovery goals.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role 2 -->
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-corporateNavy"></div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Interim Critical Care Consultant (Travel Nurse)</h3>
+                        <div class="text-corporateSlate font-medium mb-2">911 Nurses GTA Staffing Agency (Assignments in NB & NS) | 2023 – 2025</div>
+                        <ul class="list-disc list-outside ml-4 text-gray-600 space-y-2 mt-3">
+                            <li><strong>Relevance to Insurance/Repatriation:</strong> Managed high-acuity caseloads requiring rapid stability assessments—key for "fitness to fly" decisions.</li>
+                            <li>Demonstrated extreme adaptability by integrating into diverse clinical teams without supervision, a core requirement for remote consulting.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role 3 -->
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-corporateNavy"></div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Trauma & Neuro-Critical Care RN</h3>
+                        <div class="text-corporateSlate font-medium mb-2">St. Michael's Hospital, Toronto | 2009 – 2021</div>
+                        <ul class="list-disc list-outside ml-4 text-gray-600 space-y-2 mt-3">
+                            <li><strong>Relevance to Teletriage:</strong> Mastered the art of assessing unseen internal injuries and neurological deficits, directly translating to symptom interpretation over the phone.</li>
+                            <li>12 years of expertise in taking care of trauma and neuro-trauma patients, providing the critical judgment necessary to guide distressed callers through medical crises.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role 4 -->
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-corporateNavy"></div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">ICU Nurse, Medical-Surgical ICU</h3>
+                        <div class="text-corporateSlate font-medium mb-2">Toronto Western Hospital - UHN | 2001 – 2008</div>
+                        <ul class="list-disc list-outside ml-4 text-gray-600 space-y-2 mt-3">
+                            <li>Managed comprehensive care for critically ill patients within the Medical-Surgical Intensive Care Unit.</li>
+                            <li>Handled complex medical and surgical patient caseloads requiring advanced hemodynamic monitoring and therapeutic interventions.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Credentials -->
+    <section class="py-16 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-heading font-bold text-slate-900 mb-8 text-center">Credentials & Licensure</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="bg-white p-6 rounded-sm shadow-sm">
+                    <i class="fa-solid fa-id-card text-3xl text-corporateSlate mb-4"></i>
+                    <h4 class="font-bold text-slate-900">Licensure</h4>
+                    <p class="text-gray-600 mt-2">Registered Nurse: College of Nurses of Ontario (Active)</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-sm shadow-sm">
+                    <i class="fa-solid fa-certificate text-3xl text-corporateSlate mb-4"></i>
+                    <h4 class="font-bold text-slate-900">Certifications</h4>
+                    <p class="text-gray-600 mt-2">ACLS (Valid to 2027)</p>
+                    <p class="text-gray-600">BLS (Valid to 2026)</p>
+                    <p class="text-gray-600">PALS (Valid to 2027)</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-sm shadow-sm">
+                    <i class="fa-solid fa-university text-3xl text-corporateSlate mb-4"></i>
+                    <h4 class="font-bold text-slate-900">Education</h4>
+                    <p class="text-gray-600 mt-2">Certificate in Critical Care Nursing (Humber College)</p>
+                    <p class="text-gray-600">B.A. Psychology & B.A. English (University of Nebraska)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section id="contact" class="bg-corporateNavy py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-heading font-bold text-white mb-6">Discuss Your Remote Clinical Needs</h2>
+            <p class="text-blue-100 text-lg mb-10">
+                Data privacy is paramount. Full CV available to authorized recruiters upon request.
+            </p>
+
+            <div class="bg-white rounded-lg p-8 shadow-2xl max-w-lg mx-auto">
+                <!-- Switched to FormSubmit -->
+                <form action="https://formsubmit.co/msjag416@gmail.com" method="POST">
+                    <!-- Hidden Configurations for FormSubmit -->
+                    <input type="hidden" name="_subject" value="Resume Request - Canadian Remote Opportunity">
+                    <input type="hidden" name="_captcha" value="false">
+                    
+                    <div class="mb-4 text-left">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name</label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-corporateNavy" id="name" type="text" name="name" placeholder="Company Name" required>
+                    </div>
+                    
+                    <div class="mb-4 text-left">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-corporateNavy" id="email" type="email" name="email" placeholder="email@company.com" required>
+                    </div>
+
+                    <div class="mb-6 text-left">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Message</label>
+                        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-corporateNavy" id="message" name="message" rows="3" placeholder="" required></textarea>
+                    </div>
+
+                    <button class="w-full bg-corporateNavy text-white font-bold py-3 px-4 rounded hover:bg-slate-800 transition duration-300" type="submit">
+                        Send
+                    </button>
+                </form>
+                
+                <div class="mt-6 border-t pt-6 text-sm text-gray-500">
+                    <p class="font-bold text-slate-900">JoAnne Andrea Gomez, RN</p>
+                    <p>Toronto, ON</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 py-6 text-center">
+        <p class="text-slate-500 text-sm">&copy; <span id="copyright-year"></span> JoAnne Andrea Gomez. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Automatic Year Update
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    </script>
 
 </body>
 </html>
