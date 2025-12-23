@@ -332,9 +332,9 @@
             </p>
 
             <div class="bg-white rounded-lg p-8 shadow-2xl max-w-lg mx-auto">
-                <!-- Switched to FormSubmit -->
-                <form action="https://formsubmit.co/d65d504c402f1757246b2c912fcf6426" method="POST">
-                    <!-- Hidden Configurations for FormSubmit -->
+                <!-- Switched to AJAX submission to prevent redirection and Bitdefender warnings -->
+                <form id="contact-form" action="https://formsubmit.co/ajax/d65d504c402f1757246b2c912fcf6426" method="POST">
+                    <!-- Hidden Configurations -->
                     <input type="hidden" name="_subject" value="Resume Request - Canadian Remote Opportunity">
                     <input type="hidden" name="_captcha" value="false">
                     
@@ -353,8 +353,12 @@
                         <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-corporateNavy" id="message" name="message" rows="3" placeholder="" required></textarea>
                     </div>
 
-                    <button class="w-full bg-corporateNavy text-white font-bold py-3 px-4 rounded hover:bg-slate-800 transition duration-300" type="submit">
-                        Send
+                    <!-- Success/Error Message Container -->
+                    <div id="form-status" class="mb-4 text-center hidden"></div>
+
+                    <button id="submit-btn" class="w-full bg-corporateNavy text-white font-bold py-3 px-4 rounded hover:bg-slate-800 transition duration-300 flex justify-center items-center" type="submit">
+                        <span>Send</span>
+                        <i class="fa-solid fa-paper-plane ml-2"></i>
                     </button>
                 </form>
                 
@@ -374,7 +378,7 @@
         // Automatic Year Update
         document.getElementById('copyright-year').textContent = new Date().getFullYear();
 
-        // Mobile Menu Logic: Close menu when a link is clicked
+        // Mobile Menu Logic
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = mobileMenu.querySelectorAll('a');
         
@@ -383,7 +387,53 @@
                 mobileMenu.classList.add('hidden');
             });
         });
-    </script>
 
+        // AJAX Form Submission Logic
+        const form = document.getElementById('contact-form');
+        const statusDiv = document.getElementById('form-status');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = submitBtn.querySelector('span');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop the browser from redirecting
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            btnText.textContent = 'Sending...';
+            statusDiv.classList.add('hidden');
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Success!
+                    statusDiv.innerHTML = '<p class="text-green-600 font-bold bg-green-50 p-2 rounded">Message sent successfully!</p>';
+                    statusDiv.classList.remove('hidden');
+                    form.reset(); // Clear the form
+                } else {
+                    // Oops, server error
+                    statusDiv.innerHTML = '<p class="text-red-600 font-bold bg-red-50 p-2 rounded">Something went wrong. Please try again.</p>';
+                    statusDiv.classList.remove('hidden');
+                }
+            })
+            .catch(error => {
+                // Network error
+                statusDiv.innerHTML = '<p class="text-red-600 font-bold bg-red-50 p-2 rounded">Network error. Please check your connection.</p>';
+                statusDiv.classList.remove('hidden');
+            })
+            .finally(() => {
+                // Reset button state
+                submitBtn.disabled = false;
+                btnText.textContent = 'Send';
+            });
+        });
+    </script>
 </body>
 </html>
